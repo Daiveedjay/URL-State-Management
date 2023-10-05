@@ -42,6 +42,7 @@ export default function ProductItem() {
       <section>
         <figure className="product__img-container">
           <img
+            loading="lazy"
             className="product__img"
             src={singleProduct.imageUrl}
             alt="Image"
