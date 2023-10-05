@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 3rem;
+
+  & span {
+    cursor: pointer;
+    margin-right: 3rem;
+  }
+}
+
+a,
+h3 {
+  text-decoration: none;
+  color: #a04000;
+}
+
+img {
+  width: 100%;
+  display: block;
+  transition: all ease-in 0.3s;
+}
+
+.homepage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  flex-direction: column;
+  gap: 3rem;
+
+  & > * {
+    width: 100%;
+  }
+}
+
+.products__list {
+  column-count: 1;
+  column-gap: 2rem;
+  padding: 2rem;
+
+  & > * {
+    break-inside: avoid;
+    margin-bottom: 2rem;
+  }
+
+  & .product__item {
+    border-radius: 1rem;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    transition: all ease-in 0.3s;
+
+    & h2 {
+      background: #fff;
+      bottom: 5px;
+      left: 5px;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      z-index: 2;
+      position: absolute;
+      transition: all ease-in 0.3s;
+    }
+
+    &:hover img {
+      scale: 1.1;
+    }
+
+    &:hover h2 {
+      transform: translate(10px, -10px);
+    }
+  }
+}
+
+.single__product {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 4rem;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  & section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    & figure {
+      border-radius: 1rem;
+      overflow: hidden;
+
+      & .product__img {
+        width: 100%;
+      }
+    }
+
+    & aside {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+
+      & > h2 {
+        font-size: 2.5rem;
+      }
+      & > h3 {
+        font-size: 1.6rem;
+      }
+      & span {
+        background: rgba(160, 64, 0, 0.5);
+        padding-inline: 1rem;
+        align-self: flex-start;
+      }
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .products__list {
+    column-count: 2;
+  }
+
+  .single__product {
+    & section {
+      flex-direction: row;
+
+      & .product__img {
+        max-width: 300px;
+      }
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .homepage {
+    padding: 2rem 4rem;
+  }
+  .products__list {
+    column-count: 3;
+  }
+}
